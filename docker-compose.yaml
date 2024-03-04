@@ -1,0 +1,25 @@
+# Copyright VMware, Inc.
+# SPDX-License-Identifier: APACHE-2.0
+
+version: '2.1'
+
+services:
+
+  mysql:
+    image: docker.io/bitnami/mysql:8.3
+
+    ports:
+      - published: 3306
+        target: 3306
+
+    volumes:
+      - 'mysql_data:/bitnami/mysql/data'
+
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+
+volumes:
+
+  mysql_data:
+    driver: local
