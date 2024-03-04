@@ -1,0 +1,10 @@
+env/
+.idea/
+.vscode/
+
+.ignore
+
+dist/
+*.egg-info/
+__pycache__/
+*.pyc
