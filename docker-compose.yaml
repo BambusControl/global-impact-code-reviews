@@ -1,7 +1,7 @@
 # Copyright VMware, Inc.
 # SPDX-License-Identifier: APACHE-2.0
 
-version: '2.1'
+version: '3'
 
 services:
 
@@ -13,11 +13,13 @@ services:
         target: 3306
 
     volumes:
-      - 'mysql_data:/bitnami/mysql/data'
+      - type: volume
+        source: mysql_data
+        target: /bitnami/mysql/data
 
     environment:
-      # ALLOW_EMPTY_PASSWORD is recommended only for development.
-      - ALLOW_EMPTY_PASSWORD=yes
+      MYSQL_ROOT_USER: admin
+      MYSQL_ROOT_PASSWORD: collaboration
 
 volumes:
 
