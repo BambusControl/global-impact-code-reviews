@@ -9,4 +9,6 @@ dist/
 __pycache__/
 *.pyc
 
-output_file.csv
+# Dataset Files
+**/filtered_pullreq.csv
+**/new_pullreq.csv
